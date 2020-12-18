@@ -12,7 +12,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "<icon=haskell_s.xpm/>  %who% [%host%] %space% <fc=#7070ff>Live long and perspire \m/</fc> }{  <icon=xmonad_xpm_harddisk-icon_20.xpm/>%battery% : <icon=xmonad_xpm_cpu_20.xpm/>%multicpu% : <icon=xmonad_xpm_memory-icon_20.xpm/>%memory% : <icon=xmonad_xpm_net_up_20.xpm/><icon=xmonad_xpm_net_down_20.xpm/>%dynnetwork% : <icon=xmonad_xpm_calendar-clock-icon_20.xpm/> %date% "
+   , template = "<icon=haskell_s.xpm/>  [%who%@%host%] %space% <fc=#7070ff>Live long and perspire \m/</fc> }{  <icon=xmonad_xpm_harddisk-icon_20.xpm/>%battery% : <icon=xmonad_xpm_cpu_20.xpm/>%multicpu% : <icon=xmonad_xpm_memory-icon_20.xpm/>%memory% : <icon=xmonad_xpm_net_up_20.xpm/><icon=xmonad_xpm_net_down_20.xpm/>%dynnetwork% : <icon=xmonad_xpm_calendar-clock-icon_20.xpm/> %date% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -97,7 +97,7 @@ Config {
 
         -- time and date indicator 
         --   (%F = d-m-y date, %a = day of week, %T = h:m:s time)
-        , Run Date "<fc=#ABABAB>%a %b %d %Y %T</fc>" "date" 10
+        , Run Date "<fc=#8B75A1>%a %b %d %Y %T</fc>" "date" 10
         , Run Com "hostname" [] "host" 0
         , Run Com "whoami" [] "who" 0
         , Run Com "printf" ["                                 "] "space" 0                     
