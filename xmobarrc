@@ -12,7 +12,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "<icon=haskell_s.xpm/>   Prasilius [shadow-arch] / %battery% / %multicpu% / %memory% / %dynnetwork% / }{ %date% "
+   , template = "<icon=haskell_s.xpm/>  %who% [%host%] %space% <fc=#7070ff>Live long and perspire \m/</fc> }{  <icon=xmonad_xpm_harddisk-icon_20.xpm/>%battery% : <icon=xmonad_xpm_cpu_20.xpm/>%multicpu% : <icon=xmonad_xpm_memory-icon_20.xpm/>%memory% : <icon=xmonad_xpm_net_up_20.xpm/><icon=xmonad_xpm_net_down_20.xpm/>%dynnetwork% : <icon=xmonad_xpm_calendar-clock-icon_20.xpm/> %date% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -43,7 +43,7 @@ Config {
         --                     ] 36000
 
         -- network activity monitor (dynamic interface resolution)
-        [ Run DynNetwork     [ "--template" , "<dev>: <tx>kBps|<rx>kBps"
+        [ Run DynNetwork     [ "--template" , " <tx>kBps|<rx>kBps"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
                              , "--low"      , "darkgreen"
@@ -52,7 +52,7 @@ Config {
                              ] 10
 
         -- cpu activity monitor
-        , Run MultiCpu       [ "--template" , "Cpu: <total0>%|<total1>%"
+        , Run MultiCpu       [ "--template" , " <total0>%|<total1>%"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "--low"      , "darkgreen"
@@ -70,7 +70,7 @@ Config {
                              ] 50
                           
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+        , Run Memory         [ "--template" ," <usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
                              , "--low"      , "darkgreen"
@@ -79,7 +79,7 @@ Config {
                              ] 10
 
         -- battery monitor
-        , Run Battery        [ "--template" , "Batt: <acstatus>"
+        , Run Battery        [ "--template" , " <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
                              , "--low"      , "darkred"
@@ -97,7 +97,9 @@ Config {
 
         -- time and date indicator 
         --   (%F = d-m-y date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#ABABAB>%F %a %T</fc>" "date" 10
-                             ]
+        , Run Date "<fc=#ABABAB>%a %b %d %Y %T</fc>" "date" 10
+        , Run Com "hostname" [] "host" 0
+        , Run Com "whoami" [] "who" 0
+        , Run Com "printf" ["                                 "] "space" 0                     
         ]
    }
