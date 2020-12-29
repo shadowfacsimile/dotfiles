@@ -27,3 +27,5 @@
 - colorpicker
 - fortune
 - ranger
+- xclip
+- taskwarrior
