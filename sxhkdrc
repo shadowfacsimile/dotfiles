@@ -18,6 +18,10 @@ super + shift + f
 super + shift + a
 	$TERMINAL -e alsamixer
 
+# open anieco
+super + ctrl + a
+	libreoffice ~/Documents/anieco_stuff.ods &
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd

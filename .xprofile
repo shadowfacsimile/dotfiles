@@ -1,0 +1,16 @@
+# Keyboard layout
+setxkbmap us &
+
+# Wallpaper
+nitrogen --restore &
+
+# Compositor
+picom -f &
+
+# Notifications
+dunst &
+
+# Environment variables for bspwm/sxhkd
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="firefox"

@@ -126,13 +126,14 @@ label = %percentage_used%%
 type = custom/script
 exec = ~/scripts/message.sh
 format-foreground = #8899aa
+interval = 900
 
 [module/date]
 type = internal/date
 interval = 5
 
 date = %a %d %b 
-date-alt = "%Y-%m-%d"
+date-alt = "%d/%m/%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
