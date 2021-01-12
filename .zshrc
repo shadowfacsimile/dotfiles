@@ -21,6 +21,9 @@ alias ls='ls --color=auto'
 alias vi=nvim
 alias vim=nvim
 alias am=alsamixer
+alias bright='sudo ~/scripts/brightness.sh'
+# Add ssh keys using keychain
+alias kcadd='eval $(keychain --eval --quiet id_rsa_sfdo id_rsa_sfgit)'
 
 # Environment variables
 export EDITOR="nvim"
@@ -38,7 +41,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/facsimile/.zshrc'
+zstyle :compinstall filename '/home/user/.zshrc'
 autoload -U compinit && compinit -u
 zstyle ':completion:*' menu select
 # Auto complete with case insenstivity
