@@ -4,7 +4,11 @@
 
 # terminal emulator
 super + Return
-        $TERMINAL 	
+        $TERMINAL 
+
+# suckless terminal
+super + shift + Return
+	st
 
 # program launcher
 super + @space
@@ -20,7 +24,7 @@ super + shift + a
 
 # open anieco
 super + ctrl + a
-	libreoffice ~/Documents/anieco_stuff.ods &
+	libreoffice ~/documents/anieco_stuff.ods &
 
 # make sxhkd reload its configuration files:
 super + Escape
