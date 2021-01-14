@@ -8,7 +8,7 @@ super + Return
 
 # suckless terminal
 super + shift + Return
-	st
+	$TERMINAL2
 
 # program launcher
 super + @space
@@ -29,6 +29,14 @@ super + ctrl + a
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# increase brightness to 3000
+ctrl + shift + u
+	sudo ~/scripts/brightness.sh 3000
+
+# decrease brightness to 500
+ctrl + shift + d
+	sudo ~/scripts/brightness.sh 500
 
 #
 # bspwm hotkeys

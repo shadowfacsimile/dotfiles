@@ -76,7 +76,7 @@ cursor-scroll = ns-resize
 
 [module/who]
 type = custom/script
-exec = echo "  `whoami` " 
+exec = echo "  `whoami` `uname -a | awk '{print $3}' | tr '-' ' ' | awk '{print "[arch-" $1 "] "}'`" 
 format-underline  = #445566
 format-background = #8899aa
 format-foreground = #112233
