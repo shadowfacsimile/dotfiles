@@ -21,14 +21,15 @@ alias ls='ls --color=auto'
 alias vi=nvim
 alias vim=nvim
 alias am=alsamixer
-alias bright='sudo ~/scripts/brightness.sh'
-# Add ssh keys using keychain
+alias bright='sudo ~/scripts/brightness.sh' # Add ssh keys using keychain
 alias kcadd='eval $(keychain --eval --quiet id_rsa_sfdo id_rsa_sfgit)'
+alias rsyncstuff='~/scripts/rsyncstuff.sh'
 alias zipstuff='~/scripts/zipstuff.sh'
 
 # Environment variables
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="st"
+export TERMINAL2="alacritty"
 export BROWSER="firefox"
 
 # Cowsay intro
