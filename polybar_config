@@ -58,7 +58,7 @@ font-2 = Hack Nerd Font:pixelsize=10:bold:antialias=true;1
 
 modules-left = who bspwm 
 modules-center = message
-modules-right = alsa firefox notepad pacman memory hdd temperature battery date
+modules-right = alsa firefox notepad memory hdd temperature battery date
 
 tray-position = right
 tray-padding = 1 
@@ -76,7 +76,8 @@ cursor-scroll = ns-resize
 
 [module/who]
 type = custom/script
-exec = echo "  `whoami` `uname -a | awk '{print $3}' | tr '-' ' ' | awk '{print "[arch-" $1 "] "}'`" 
+#exec = echo "  `whoami` `uname -a | awk '{print $3}' | tr '-' ' ' | awk '{print "[arch-" $1 "] "}'`" 
+exec = echo "  `whoami` [`ID="$(iwgetid -a | awk '{print $1}')";NW="$(iwgetid $ID -r)";if [[ "$NW" ]]; then echo "直 $NW"; else echo "睊 Not Connected"; fi`] "
 format-underline  = #445566
 format-background = #8899aa
 format-foreground = #112233
