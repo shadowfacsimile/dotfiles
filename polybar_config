@@ -52,13 +52,13 @@ format-padding = 0
 module-margin-left = 1 
 module-margin-right = 2 
 
-font-0 = Hack Nerd Font:pixelsize=10:bold:antialias=true;1
-font-1 = Hack Nerd Font:pixelsize=10:bold:antialias=true;1
-font-2 = Hack Nerd Font:pixelsize=10:bold:antialias=true;1
+font-0 = Hack Nerd Font:pixelsize=9:bold:antialias=true;1
+font-1 = Hack Nerd Font:pixelsize=9:bold:antialias=true;1
+font-2 = Hack Nerd Font:pixelsize=9:bold:antialias=true;1
 
 modules-left = who bspwm 
 modules-center = message
-modules-right = alsa firefox notepad memory hdd temperature battery date
+modules-right = mem hdd cpu temperature battery date
 
 tray-position = right
 tray-padding = 1 
@@ -77,7 +77,7 @@ cursor-scroll = ns-resize
 [module/who]
 type = custom/script
 #exec = echo "  `whoami` `uname -a | awk '{print $3}' | tr '-' ' ' | awk '{print "[arch-" $1 "] "}'`" 
-exec = echo "  `whoami` [`ID="$(iwgetid -a | awk '{print $1}')";NW="$(iwgetid $ID -r)";if [[ "$NW" ]]; then echo "直 $NW"; else echo "睊 Not Connected"; fi`] "
+exec = echo "  `whoami` [`ID="$(iwgetid -a | awk '{print $1}')";NW="$(iwgetid $ID -r)";if [[ "$NW" ]]; then echo "直 $NW" | cut -b 1-10; else echo "睊 Not Connected"; fi`] "
 format-underline  = #445566
 format-background = #8899aa
 format-foreground = #112233
@@ -137,6 +137,14 @@ format-prefix = " "
 format-prefix-foreground = #407294
 format-underline = #4bffdc
 label = %percentage_used%% 
+
+[module/mem]
+type = custom/script
+interval = 2
+exec = free -h | grep 'Mem:' | awk '{print $3, "/", $2}' | sed 's/i//g' | sed 's/ //g' 
+format-prefix = " "
+format-prefix-foreground = #407294
+format-underline = #4bffdc
 
 [module/cpu]
 type = internal/cpu
