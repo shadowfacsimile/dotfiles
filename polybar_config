@@ -57,8 +57,8 @@ font-1 = Hack Nerd Font:pixelsize=9:bold:antialias=true;1
 font-2 = Hack Nerd Font:pixelsize=9:bold:antialias=true;1
 
 modules-left = who bspwm 
-modules-center = message
-modules-right = mem hdd cpu temperature battery date
+modules-center = message 
+modules-right = firefox librewolf notepad alsa mem hdd temperature battery date
 
 tray-position = right
 tray-padding = 1 
@@ -89,6 +89,14 @@ format-foreground = #ff4e37
 format-background = 
 interval = 0
 click-left = firefox
+
+[module/librewolf]
+type = custom/script
+exec = echo "爵"
+format-foreground = #0087ff
+format-background = 
+interval = 0
+click-left = librewolf
 
 [module/notepad]
 type = custom/script

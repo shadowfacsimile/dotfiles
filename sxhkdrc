@@ -18,6 +18,10 @@ super + @space
 super + shift + f
 	$BROWSER
 
+# launch librewolf
+super + ctrl + f
+	librewolf
+
 # open alsamixer
 super + shift + a
 	$TERMINAL -e alsamixer
